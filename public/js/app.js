@@ -1,5 +1,3 @@
-
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const message1 = document.querySelector('#message1')
@@ -11,8 +9,8 @@ weatherForm.addEventListener('submit', (e)=>{
   message1.textContent = 'Loading...'
   message2.textContent = ''
 
-  
-  fetch(`http://localhost:3000/weather?address=${location}`).then((resp) => {
+  // change this so it can be deployed and not just in localserver
+  fetch(`/weather?address=${location}`).then((resp) => {
     resp.json().then((data) => {
       if (data.error) {
         throw new Error('Something went wrong, try typing again')
